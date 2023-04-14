@@ -41,7 +41,7 @@
           <h2 class="title">WORKS</h2>
           <div class="works-list">
             {% for work in works %}
-              <a class="works-item" href="{% url 'portfolio_app:worksTemplate' %}">
+              <a class="works-item" href="{% url 'portfolio_app:worksTemplate pk=work.pk' %}">
                 <div class="works-img"><img src="{%static 'img/works-sample-thumb.jpg'%}" alt="" /></div>
                 <p class="works-name">作品名が入る</p>
                 <p class="works-info">Design / Coding(Responsive)</p>
@@ -50,6 +50,34 @@
           </div>
         </div>
     </section>
+
+<!--
+            <a class="works-item" href="{% url 'portfolio_app:worksTemplate pk=work.pk' %}">
+              <div class="works-img"><img src="{%static 'img/works-sample-thumb.jpg'%}" alt="" /></div>
+              <p class="works-name">作品名が入る</p>
+              <p class="works-info">Design / Coding(Responsive)</p>
+            </a>
+            <a class="works-item" href="{% url 'portfolio_app:worksTemplate' %}">
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
+              <p class="works-name">作品名が入る</p>
+              <p class="works-info">Design / Coding(Responsive) / WordPress</p>
+            </a>
+            <a class="works-item" href="{% url 'portfolio_app:worksTemplate' %}">
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
+              <p class="works-name">作品名が入る</p>
+              <p class="works-info">Design</p>
+            </a>
+            <a class="works-item" href="{% url 'portfolio_app:worksTemplate' %}">
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
+              <p class="works-name">作品名が入る</p>
+              <p class="works-info">Banner Design</p>
+            </a>
+            <a class="works-item" href="{% url 'portfolio_app:worksTemplate' %}">
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
+              <p class="works-name">作品名が入る</p>
+              <p class="works-info">Banner Design</p>
+            </a>
+-->
       <!-- /works -->
 
       <!-- skill -->
