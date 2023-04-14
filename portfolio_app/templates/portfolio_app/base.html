@@ -28,13 +28,13 @@
     <header class="header ">
       <div class="container">
         <h1 class="header-logo">
-          <a href=".">TARO YAMADA</a>
+          <a href=".">TOP</a>
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
             <li class="gnav-item"><a href="#works">WORKS</a></li>
             <li class="gnav-item"><a href="#skill">SKILL</a></li>
-            <li class="gnav-item"><a href="#about">ABOUT</a></li>
+            <li class="gnav-item"><a href="#about">ABOUT ME</a></li>
             <li class="gnav-item"><a href="#contact">CONTACT</a></li>
           </ul>
         </nav>
@@ -47,7 +47,7 @@
       <!-- mv -->
       <div class="mv">
         <div class="mv-container">
-          <p class="mv-title">TARO YAMADA</p>
+          <p class="mv-title">KAITO KITAYA</p>
           <p class="mv-subtitle">PORTFOLIO</p>
           <p class="mv-text">
             ユーザーとお客様が心から満足できる<br class="sp-only">サイトをお作りいたします。<br>
@@ -63,27 +63,27 @@
           <h2 class="title">WORKS</h2>
           <div class="works-list">
             <a class="works-item" href="works-template.html">
-              <div class="works-img"><img src="img/works-sample-thumb.jpg" alt="" /></div>
+              <div class="works-img"><img src="{%static 'img/works-sample-thumb.jpg'%}" alt="" /></div>
               <p class="works-name">作品名が入る</p>
               <p class="works-info">Design / Coding(Responsive)</p>
             </a>
             <a class="works-item" href="works-template.html">
-              <div class="works-img"><img src="img/works-dummy-thumb.jpg" alt="" /></div>
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
               <p class="works-name">作品名が入る</p>
               <p class="works-info">Design / Coding(Responsive) / WordPress</p>
             </a>
             <a class="works-item" href="works-template.html">
-              <div class="works-img"><img src="img/works-dummy-thumb.jpg" alt="" /></div>
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
               <p class="works-name">作品名が入る</p>
               <p class="works-info">Design</p>
             </a>
             <a class="works-item" href="works-template.html">
-              <div class="works-img"><img src="img/works-dummy-thumb.jpg" alt="" /></div>
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
               <p class="works-name">作品名が入る</p>
               <p class="works-info">Banner Design</p>
             </a>
             <a class="works-item" href="works-template.html">
-              <div class="works-img"><img src="img/works-dummy-thumb.jpg" alt="" /></div>
+              <div class="works-img"><img src="{%static 'img/works-dummy-thumb.jpg'%}" alt="" /></div>
               <p class="works-name">作品名が入る</p>
               <p class="works-info">Banner Design</p>
             </a>
@@ -98,7 +98,7 @@
           <h2 class="title">SKILL</h2>
           <div class="skill-list">
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">HTML5/CSS3</h3>
                 <p class="skill-text">
@@ -106,7 +106,7 @@
               </div>
             </div>
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">WordPress</h3>
                 <p class="skill-text">
@@ -114,7 +114,7 @@
               </div>
             </div>
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">JavaScript</h3>
                 <p class="skill-text">
@@ -122,7 +122,7 @@
               </div>
             </div>
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">Photoshop</h3>
                 <p class="skill-text">
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">Illustrator</h3>
                 <p class="skill-text">
@@ -138,7 +138,7 @@
               </div>
             </div>
             <div class="skill-item">
-              <p class="skill-img"><img src="img/icon_skill.png" alt=""></p>
+              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">XD</h3>
                 <p class="skill-text">
@@ -156,7 +156,7 @@
           <h2 class="title">ABOUT</h2>
           <div class="profile">
             <p class="profile-img">
-              <img src="img/profile.jpg" alt="">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
             </p>
             <div class="profile-body">
               <p>
