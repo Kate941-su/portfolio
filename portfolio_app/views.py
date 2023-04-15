@@ -11,5 +11,5 @@ def index(request):
     return render(request, 'portfolio_app/index.html', {'works' : works})
 
 def worksTemplate(request, pk):
-    works = get_object_or_404(Post, pk=pk)
-    return render(request, 'portfolio_app/worksTemplate.html', {'works' : works})
+    work = get_object_or_404(Post, pk=pk)
+    return render(request, 'portfolio_app/worksTemplate.html', {'work' : work})
