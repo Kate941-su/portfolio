@@ -2,11 +2,15 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+
+
 class Post(models.Model):
+    def getPrimarykey(self):
+        return self.objects.pk
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='img/',null=True)
-    urlFiled = models.TextField(default='')
+    image = models.ImageField(upload_to='media/', null=True)
+    urlFiled = models.CharField(max_length=200)
     purposeField =  models.TextField(default='')
     targetField = models.TextField(default='')
     aboutDesignField = models.TextField(default='')
