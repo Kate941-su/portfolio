@@ -11,3 +11,4 @@ db.sqlite3
 manage.py
 pyvenv.cfg
 requirements.txt
+media
