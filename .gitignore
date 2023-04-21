@@ -6,6 +6,7 @@ include
 #portfolio_project/__pycache__
 #portfolio_project/__init__.py
 portfolio_project/secret.py
+portfolio_project/settings.py
 #portfolio-template-basic
 #db.sqlite3
 #manage.py
