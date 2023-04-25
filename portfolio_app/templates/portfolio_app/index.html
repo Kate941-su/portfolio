@@ -41,8 +41,8 @@
           <h2 class="title">WORKS</h2>
           <div class="works-list">
             {% for work in works %}
-              <a class="works-item" href="{{work.image.url}}">
-                <div class="works-img"><img src="{%static 'img/works-sample-thumb.jpg'%}" alt="" /></div>
+              <a class="works-item" href="{% url 'portfolio_app:worksTemplate' pk=work.pk %}">
+                <div class="works-img"><img src="{{work.image.url}}" alt=""/></div>
                 <p class="works-name">作品名が入る</p>
                 <p class="works-info">Design / Coding(Responsive)</p>
               </a>              
