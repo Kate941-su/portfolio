@@ -10,9 +10,9 @@
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
+            <li class="gnav-item"><a href="#about">ABOUT ME</a></li>
             <li class="gnav-item"><a href="#works">WORKS</a></li>
             <li class="gnav-item"><a href="#skill">SKILLS</a></li>
-            <li class="gnav-item"><a href="#about">ABOUT ME</a></li>
             <li class="gnav-item"><a href="#contact">CONTACT</a></li>
           </ul>
         </nav>
@@ -27,13 +27,77 @@
         <div class="mv-container">
           <p class="mv-title">KAITO KITAYA</p>
           <p class="mv-subtitle">PORTFOLIO</p>
-          <p class="mv-text">
-            ユーザーとお客様が心から満足できる<br class="sp-only">サイトをお作りいたします。<br>
-            デザインとコーディングは<br class="sp-only">おまかせください。<br>
-          </p>
+          <p class="mv-text">Latest Update 2023/04/25</p>
         </div>
       </div>
       <!-- /mv -->
+
+      <!-- about -->
+      <section class="about section" id="about">
+        <div class="container">
+          <h2 class="title">ABOUT ME</h2>
+          <div class="profile">
+            <p class="profile-img">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
+            </p>
+            <div class="profile-body">
+              <p>愛知県名古屋市出身。小中高を地元の公立高校で過ごす。
+              </p>
+            </div>
+          </div>
+
+          <div class="profile">
+            <p class="profile-img">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
+            </p>
+            <div class="profile-body">
+              <p>
+                名古屋工業大学に入学。大学三年生のとき研究ではじめてPythonを触る。
+              </p>
+              </p>
+            </div>
+          </div>
+
+          <div class="profile">
+            <p class="profile-img">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
+            </p>
+            <div class="profile-body">
+              <p>
+                名古屋工業大学大学院進学。分子動力学シミュレーションの高速化のために
+                Ｃ言語を習得する。
+              </p>
+            </div>
+          </div>
+
+          <div class="profile">
+            <p class="profile-img">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
+            </p>
+            <div class="profile-body">
+              <p>
+                大学院在学中にスマホアプリ開発のベンチャー企業でアプリ開発を一年間修業。みっちりC＋＋を経験。<br>
+                大学院卒業後はメーカーに開発系ソフトウェアエンジニアとして勤務する。この時初めて名古屋を離れて単身浜松へ。
+              </p>
+            </div>
+          </div>
+
+          <div class="profile">
+            <p class="profile-img">
+              <img src=" {%static 'img/profile.jpg'%}" alt="">
+            </p>
+            <div class="profile-body">
+              <p>
+                やっぱり、Web・スマホアプリ開発エンジニアになりたい気持ちが捨てきれず退社。
+                名古屋へ帰還。フルリモートの会社でスマホアプリ・バックエンドエンジニアとして再出発。
+              </p>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- /about -->
 
       <!-- works -->
       <section class="works section" id="works">
@@ -43,8 +107,8 @@
             {% for work in works %}
               <a class="works-item" href="{% url 'portfolio_app:worksTemplate' pk=work.pk %}">
                 <div class="works-img"><img src="{{work.image.url}}" alt=""/></div>
-                <p class="works-name">作品名が入る</p>
-                <p class="works-info">Design / Coding(Responsive)</p>
+                <p class="works-name">{{work.title}}</p>
+                <p class="works-info">設計・コーディング</p>
               </a>              
             {% endfor %}
           </div>
@@ -58,78 +122,70 @@
           <h2 class="title">SKILL</h2>
           <div class="skill-list">
             <div class="skill-item">
+                <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
+                <div class="skill-body">
+                  <h3 class="skill-name">Python</h3>
+                  <p class="skill-text">★★★</p>
+                </div>
+              </div>
+  
+              <div class="skill-item">
+                  <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
+                  <div class="skill-body">
+                    <h3 class="skill-name">C/C++</h3>
+                    <p class="skill-text">★★★</p>
+                  </div>
+                </div>
+  
+              <div class="skill-item">
+                <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
+                <div class="skill-body">
+                  <h3 class="skill-name">Django</h3>
+                  <p class="skill-text">★★</p>
+                </div>
+              </div>
+            <div class="skill-item">
               <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">HTML5/CSS3</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
+                <p class="skill-text">★★</p>
               </div>
             </div>
+
             <div class="skill-item">
               <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">WordPress</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
+                <p class="skill-text">★</p>
               </div>
             </div>
+
             <div class="skill-item">
               <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
                 <h3 class="skill-name">JavaScript</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
+                <p class="skill-text">★</p>
               </div>
             </div>
+
             <div class="skill-item">
               <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
               <div class="skill-body">
-                <h3 class="skill-name">Photoshop</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
-              <div class="skill-body">
-                <h3 class="skill-name">Illustrator</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <p class="skill-img"><img src="{% static 'img/icon_skill.png' %}" alt=""></p>
-              <div class="skill-body">
-                <h3 class="skill-name">XD</h3>
-                <p class="skill-text">
-                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
+                <h3 class="skill-name">PHP</h3>
+                <p class="skill-text">★</p>
               </div>
             </div>
           </div>
+          <p class="skill-text">★ : 初心者</p>
+          <p class="skill-text">★★ : 資料を見ながら簡単な開発ができる</p>
+          <p class="skill-text">★★★ : 資料無しでも簡単な開発ができる</p>
+          <p class="skill-text">★★★★ : 大規模な設計・開発経験がある</p>
+          <p class="skill-text">★★★★★ : 人に教えられるレベル</p>
         </div>
       </section>
       <!-- /skill -->
 
-      <!-- about -->
-      <section class="about section" id="about">
-        <div class="container">
-          <h2 class="title">ABOUT</h2>
-          <div class="profile">
-            <p class="profile-img">
-              <img src=" {%static 'img/profile.jpg'%}" alt="">
-            </p>
-            <div class="profile-body">
-              <p>
-                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
-              </p>
-              <p>
-                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /about -->
+
 
       <!-- contact -->
       <section class="contact section" id="contact">
