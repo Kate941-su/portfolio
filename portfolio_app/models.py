@@ -10,7 +10,7 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/', null=True)
-    urlFiled = models.CharField(max_length=200)
+    urlField = models.CharField(max_length=200,default='')
     purposeField =  models.TextField(default='')
     targetField = models.TextField(default='')
     aboutDesignField = models.TextField(default='')

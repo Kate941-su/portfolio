@@ -6,7 +6,7 @@
     <header class="header ">
       <div class="container">
         <h1 class="header-logo">
-          <a href=".">TOP</a>
+          <a href="{% url 'portfolio_app:index' %}">TOP</a>
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
@@ -41,7 +41,7 @@
           <h2 class="title">WORKS</h2>
           <div class="works-list">
             {% for work in works %}
-              <a class="works-item" href="{% url 'portfolio_app:worksTemplate' pk=work.pk %}">
+              <a class="works-item" href="{{work.image.url}}">
                 <div class="works-img"><img src="{%static 'img/works-sample-thumb.jpg'%}" alt="" /></div>
                 <p class="works-name">作品名が入る</p>
                 <p class="works-info">Design / Coding(Responsive)</p>
