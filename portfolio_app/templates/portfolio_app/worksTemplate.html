@@ -1,6 +1,9 @@
 {% extends 'portfolio_app/base.html' %}
 {% load static %}
-
+{% block head %}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link href="{% static 'css/gallery.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
 {% block wrapper %}
     <!-- header -->
     <header class="header ">
@@ -25,8 +28,18 @@
         <div class="article-container">
           <h2 class="article-title">{{ work.title }}</h2>
           <div class="article-body">
-            <img src="{{work.image.url}}"alt="not">
-            </p>
+            <ul class="gallery">
+                <li><img src="{{work.image1.url}}" alt=""></li>
+                <li><img src="{{work.image2.url}}" alt=""></li>
+                <li><img src="{{work.image3.url}}" alt=""></li>
+                <li><img src="{{work.image4.url}}" alt=""></li>
+            </ul>          
+            <ul class="choice-btn">
+                <li><img src="{{work.image1.url}}" alt=""></li>
+                <li><img src="{{work.image2.url}}" alt=""></li>
+                <li><img src="{{work.image3.url}}" alt=""></li>
+                <li><img src="{{work.image4.url}}" alt=""></li>
+            </ul>          
             <h3>ソース</h3>
             <p><a href="{{work.urlField}}">{{work.urlField}}</a></p>
             <h3>概要</h3>
@@ -51,4 +64,9 @@
       <div class="copyright">&copy;KAITO KITAYA</div>
     </footer>
     <!-- /footer -->
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-4/js/6-2-4.js"></script>
+<script src="{% static 'js/gallery.js' %}"></script>
 {% endblock %}

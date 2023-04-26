@@ -15,10 +15,8 @@
   <meta property="og:image" content="{% static 'portfolio_app/img/ogp.png' %}">
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
   <link href="{% static 'css/ress.css' %}" rel="stylesheet" type="text/css" />
-
-  <link href="{% static 'css/style.css' %}" media="all" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
-  <link rel=”canonical” href=”URLが入る” />
+{% block head %}{% endblock %}
 </head>
 
 
@@ -28,5 +26,6 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type='text/javascript' src="{% static 'js/script.js' %}"></script>
+  {% block scripts %}{% endblock %}
 </body>
 </html>
