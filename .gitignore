@@ -2,7 +2,6 @@ include
 IMAGES
 #Lib
 portfolio_app/__pycache__
-portfolio_app/migrations
 db.sqlite3
 portfolio_project/__pycache__
 #portfolio_project/__init__.py
