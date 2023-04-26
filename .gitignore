@@ -4,6 +4,7 @@ IMAGES
 portfolio_app/__pycache__
 db.sqlite3
 portfolio_project/__pycache__
+portfolio_project/migrations
 #portfolio_project/__init__.py
 portfolio_project/secret.py
 portfolio_project/settings.py
