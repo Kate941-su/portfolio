@@ -199,6 +199,11 @@ img {
   border: 1px solid #e6e6e6;
 }
 
+.works-img img:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.9);
+    transform: translateY(-5px);    
+}
+
 .works-name {
   font-size: 12px;
   font-weight: bold;

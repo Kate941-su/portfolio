@@ -25,15 +25,14 @@
         <div class="article-container">
           <h2 class="article-title">{{ work.title }}</h2>
           <div class="article-body">
-            <p>作品画像</p>
             <img src="{{work.image.url}}"alt="not">
             </p>
             <h3>ソース</h3>
             <p><a href="{{work.urlField}}">{{work.urlField}}</a></p>
             <h3>概要</h3>
-            <p>{{work.purposeField}}</p>
+            <p>{{work.aboutField}}</p>
             <h3>仕様技術</h3>
-            <p>{{work.targetField}}</p>
+            <p>{{work.skillField}}</p>
           </div>
           <div class="home-link">
             <a href="{% url 'portfolio_app:index' %}#works">Works一覧へ</a>

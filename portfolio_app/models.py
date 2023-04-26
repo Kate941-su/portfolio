@@ -11,10 +11,8 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/', null=True)
     urlField = models.CharField(max_length=200,default='')
-    purposeField =  models.TextField(default='')
-    targetField = models.TextField(default='')
-    aboutDesignField = models.TextField(default='')
-    aboutCodingField = models.TextField(default='')
+    aboutField =  models.TextField(default='')
+    skillField = models.TextField(default='')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     def publish(self):
