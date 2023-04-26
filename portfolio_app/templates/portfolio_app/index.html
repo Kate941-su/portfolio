@@ -120,7 +120,7 @@
               <a class="works-item" href="{% url 'portfolio_app:worksTemplate' pk=work.pk %}">
                 <div class="works-img"><img src="{{work.image1.url}}" alt=""/></div>
                 <p class="works-name">{{work.title}}</p>
-                <p class="works-info">設計・コーディング</p>
+                <p class="works-info">{{work.roleField}}</p>
               </a>              
             {% endfor %}
           </div>

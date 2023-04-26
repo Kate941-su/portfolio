@@ -14,6 +14,7 @@ class Post(models.Model):
     image3 = models.ImageField(upload_to='media/', null=True)
     image4 = models.ImageField(upload_to='media/', null=True)
     urlField = models.CharField(max_length=200,default='')
+    roleField = models.CharField(max_length=200,default='')
     aboutField =  models.TextField(default='')
     skillField = models.TextField(default='')
     created_date = models.DateTimeField(default=timezone.now)
