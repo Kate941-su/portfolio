@@ -1,5 +1,6 @@
 include
 IMAGES
+trimming.pptm
 #Lib
 portfolio_app/__pycache__
 db.sqlite3
