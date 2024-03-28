@@ -22,7 +22,7 @@ dependencies:
   bloc_concurrency: ^0.2.4
   simple_shadow: ^0.3.1
   flutter_hooks: ^0.20.5
-
+  url_launcher: ^6.2.4
 
 
 dev_dependencies:
@@ -34,6 +34,8 @@ dev_dependencies:
   flutter_gen_runner: ^5.4.0
   flutter_svg: ^2.0.10+1
 
+
+
 flutter_gen:
   output: lib/gen/
 
@@ -44,7 +46,7 @@ flutter_gen:
 flutter:
   assets:
     - assets/images/
-    - assets/icons/svg/
+    - assets/icons/sns/
 
   fonts:
      - family: Dos

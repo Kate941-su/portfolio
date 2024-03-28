@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/ui/main_screen.dart';
 import 'blocs/counter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,8 +18,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.lightTheme),
           useMaterial3: true,
+        ),
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.darkTheme)
         ),
         home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
