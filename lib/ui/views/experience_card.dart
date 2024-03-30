@@ -23,7 +23,7 @@ class ExperienceCard extends HookWidget {
         padding: const EdgeInsets.only(right: 128),
         child: SizedBox(
           width: 900,
-          height: 600,
+          height: 720,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -47,22 +47,25 @@ class ExperienceCard extends HookWidget {
               ),
               Align(
                 alignment: Alignment.center,
-                child: SmoothPageIndicator(
-                  count: experienceList.length,
-                  controller: controller,
-                  effect: const ScrollingDotsEffect(
-                    activeStrokeWidth: 2.6,
-                    activeDotScale: 1.3,
-                    maxVisibleDots: 5,
-                    radius: 8,
-                    spacing: 10,
-                    dotHeight: 12,
-                    dotWidth: 12,
+                child: Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: SmoothPageIndicator(
+                    count: experienceList.length,
+                    controller: controller,
+                    effect: const ScrollingDotsEffect(
+                      activeStrokeWidth: 2.6,
+                      activeDotScale: 1.3,
+                      maxVisibleDots: 5,
+                      radius: 8,
+                      spacing: 10,
+                      dotHeight: 12,
+                      dotWidth: 12,
+                    ),
+                    onDotClicked: (index) {
+                      // TODO: Change history by clicking circle list.
+                      // indexState.value = index;
+                    },
                   ),
-                  onDotClicked: (index) {
-                    // TODO: Change history by clicking circle list.
-                    // indexState.value = index;
-                  },
                 ),
               ),
             ],

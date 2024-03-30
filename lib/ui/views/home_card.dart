@@ -7,20 +7,23 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Hi there! My name is"),
-        Text(
-          'Kaito Kitaya',
-          style: TextStyle(
-            fontSize: 64,
-            fontFamily: FontFamily.dos
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 240),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Hi there! My name is"),
+          Text(
+            'Kaito Kitaya',
+            style: TextStyle(
+              fontSize: 64,
+              fontFamily: FontFamily.dos
+            ),
           ),
-        ),
-        // TODO: Make appropriate sentence.
-        Text("I'm a software engineer in Japan. I love to develop application.")
-      ],
+          // TODO: Make appropriate sentence.
+          Text("I'm a software engineer in Japan. I love to develop application.")
+        ],
+      ),
     );
   }
 }

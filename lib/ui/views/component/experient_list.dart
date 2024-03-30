@@ -65,6 +65,16 @@ class _ExperienceComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1
+        ),
+        boxShadow: [BoxShadow(
+          color: Colors.yellow,
+          blurRadius: 4,
+          offset: const Offset(0,3),
+        )]
+      ),
       width: 720,
       padding: const EdgeInsets.all(64.0),
       child: Column(
