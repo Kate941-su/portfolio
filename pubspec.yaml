@@ -56,6 +56,9 @@ flutter:
      - family: Dos
        fonts:
          - asset: assets/fonts/ModernDOS9x16.ttf
+     - family: Monoline
+       fonts:
+         - asset: assets/fonts/SilkaMono-Regular.otf
   uses-material-design: true
 
 

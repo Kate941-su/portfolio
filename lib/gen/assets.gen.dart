@@ -20,12 +20,24 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/cat.jpg
+  AssetGenImage get cat => const AssetGenImage('assets/images/cat.jpg');
+
   /// File path: assets/images/face_photo.jpg
   AssetGenImage get facePhoto =>
       const AssetGenImage('assets/images/face_photo.jpg');
 
+  /// File path: assets/images/green.png
+  AssetGenImage get green => const AssetGenImage('assets/images/green.png');
+
+  /// File path: assets/images/room.jpg
+  AssetGenImage get room => const AssetGenImage('assets/images/room.jpg');
+
+  /// File path: assets/images/yoga.jpg
+  AssetGenImage get yoga => const AssetGenImage('assets/images/yoga.jpg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [facePhoto];
+  List<AssetGenImage> get values => [cat, facePhoto, green, room, yoga];
 }
 
 class $AssetsIconsSnsGen {

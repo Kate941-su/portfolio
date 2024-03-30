@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
+import 'package:rate_converter_flutter/gen/fonts.gen.dart';
 import 'package:rate_converter_flutter/ui/main_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           title: 'Kaito Kitaya Porfolio',
           theme: ThemeData(
             primaryColor: AppColor.lightTheme,
+            fontFamily: FontFamily.monoline,
             useMaterial3: true,
           ),
           darkTheme: ThemeData(

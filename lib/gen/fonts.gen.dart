@@ -12,4 +12,7 @@ class FontFamily {
 
   /// Font family: Dos
   static const String dos = 'Dos';
+
+  /// Font family: Monoline
+  static const String monoline = 'Monoline';
 }
