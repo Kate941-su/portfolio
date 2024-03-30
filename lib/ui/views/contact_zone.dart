@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
+import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 
+import '../../constant/app_color.dart';
 import 'component/card_title.dart';
 
 class ContactZone extends StatelessWidget {
@@ -7,13 +11,20 @@ class ContactZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(right: 128),
-      child: Column(
-        children: [
-          CardTitle(title: 'Thank You For Coming My Portfolio Site!'),
-        ],
-      ),
-    );
+    return BlocBuilder<ColorThemeBloc, ColorThemeState>(
+        builder: (context, state) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 128),
+        child: Column(
+          children: [
+            CardTitle(
+              title: 'Thank You For Coming My Portfolio Site!',
+              color:
+                  AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
+            ),
+          ],
+        ),
+      );
+    });
   }
 }

@@ -70,7 +70,7 @@ class _ExperienceComponent extends StatelessWidget {
           width: 1
         ),
         boxShadow: [BoxShadow(
-          color: Colors.yellow,
+          color: Colors.yellow.withOpacity(0.5),
           blurRadius: 4,
           offset: const Offset(0,3),
         )]
@@ -97,7 +97,7 @@ class _ExperienceComponent extends StatelessWidget {
           Text(
             description,
           ),
-          Text('$startDate - $endDate',
+          Text( endDate == null ? '$startDate - current' : '$startDate - $endDate',
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),

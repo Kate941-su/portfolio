@@ -1,8 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
+import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/gen/assets.gen.dart';
 
+import '../../blocs/state/color_theme_state.dart';
 import 'component/card_title.dart';
 
 class PortfolioZone extends StatelessWidget {
@@ -10,104 +15,110 @@ class PortfolioZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const CardTitle(title: '03. Portfolio'),
-        Padding(
-          padding: const EdgeInsets.all(32),
-          child: _PortfolioCard(
-            leftItem: _ImageCard(
-              image: Assets.images.yoga,
-            ),
-            rightItem: _DescriptionCard(
-              title: 'Simple Blood Pressure Manager',
-              description:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                  " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-                  "when an unknown printer took a galley of type and scrambled it to make a type "
-                  "specimen book. It has survived not only five centuries, but also the leap into "
-                  "electronic typesetting, remaining essentially unchanged. It was popularised in "
-                  "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,"
-                  " and more recently with desktop publishing software like Aldus PageMaker including"
-                  " versions of Lorem Ipsum.",
-              technicalStacks: '',
-              hyperLink: null,
+    return BlocBuilder<ColorThemeBloc, ColorThemeState>(
+      builder: (context, state) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CardTitle(
+            title: '03. Portfolio',
+            color:
+                AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: _PortfolioCard(
+              leftItem: _ImageCard(
+                image: Assets.images.yoga,
+              ),
+              rightItem: _DescriptionCard(
+                title: 'Simple Blood Pressure Manager',
+                description:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                    "when an unknown printer took a galley of type and scrambled it to make a type "
+                    "specimen book. It has survived not only five centuries, but also the leap into "
+                    "electronic typesetting, remaining essentially unchanged. It was popularised in "
+                    "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,"
+                    " and more recently with desktop publishing software like Aldus PageMaker including"
+                    " versions of Lorem Ipsum.",
+                technicalStacks: '',
+                hyperLink: null,
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(32),
-          child: _PortfolioCard(
-            rightItem: _ImageCard(
-              image: Assets.images.cat,
-            ),
-            leftItem: _DescriptionCard(
-              title: 'Simple Blood Pressure Manager',
-              description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
-                  " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n"
-                  "when an unknown printer took a galley of type and scrambled it to make a type \n"
-                  "specimen book. It has survived not only five centuries, but also the leap into \n"
-                  "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
-                  "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
-                  " and more recently with desktop publishing software like Aldus PageMaker including\n"
-                  " versions of Lorem Ipsum.",
-              technicalStacks: '',
-              hyperLink: null,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(32),
-          child: _PortfolioCard(
-            leftItem: _ImageCard(
-              image: Assets.images.yoga,
-            ),
-            rightItem: _DescriptionCard(
-              title: 'Simple Blood Pressure Manager',
-              description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
-                  " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n"
-                  "when an unknown printer took a galley of type and scrambled it to make a type \n"
-                  "specimen book. It has survived not only five centuries, but also the leap into \n"
-                  "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
-                  "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
-                  " and more recently with desktop publishing software like Aldus PageMaker including\n"
-                  " versions of Lorem Ipsum.",
-              technicalStacks: '',
-              hyperLink: null,
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: _PortfolioCard(
+              rightItem: _ImageCard(
+                image: Assets.images.cat,
+              ),
+              leftItem: _DescriptionCard(
+                title: 'Simple Blood Pressure Manager',
+                description:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
+                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n"
+                    "when an unknown printer took a galley of type and scrambled it to make a type \n"
+                    "specimen book. It has survived not only five centuries, but also the leap into \n"
+                    "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
+                    "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
+                    " and more recently with desktop publishing software like Aldus PageMaker including\n"
+                    " versions of Lorem Ipsum.",
+                technicalStacks: '',
+                hyperLink: null,
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(32),
-          child: _PortfolioCard(
-            rightItem: _ImageCard(
-              image: Assets.images.yoga,
-            ),
-            leftItem: _DescriptionCard(
-              title: 'Simple Blood Pressure Manager',
-              description:
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                  " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
-                  "when an unknown printer took a galley of type and scrambled it to make a type "
-                  "specimen book. It has survived not only five centuries, but also the leap into \n"
-                  "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
-                  "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
-                  " and more recently with desktop publishing software like Aldus PageMaker including\n"
-                  " versions of Lorem Ipsum.",
-              technicalStacks: '',
-              hyperLink: null,
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: _PortfolioCard(
+              leftItem: _ImageCard(
+                image: Assets.images.yoga,
+              ),
+              rightItem: _DescriptionCard(
+                title: 'Simple Blood Pressure Manager',
+                description:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
+                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n"
+                    "when an unknown printer took a galley of type and scrambled it to make a type \n"
+                    "specimen book. It has survived not only five centuries, but also the leap into \n"
+                    "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
+                    "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
+                    " and more recently with desktop publishing software like Aldus PageMaker including\n"
+                    " versions of Lorem Ipsum.",
+                technicalStacks: '',
+                hyperLink: null,
+              ),
             ),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: _PortfolioCard(
+              rightItem: _ImageCard(
+                image: Assets.images.yoga,
+              ),
+              leftItem: _DescriptionCard(
+                title: 'Simple Blood Pressure Manager',
+                description:
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+                    "when an unknown printer took a galley of type and scrambled it to make a type "
+                    "specimen book. It has survived not only five centuries, but also the leap into \n"
+                    "electronic typesetting, remaining essentially unchanged. It was popularised in \n"
+                    "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\n"
+                    " and more recently with desktop publishing software like Aldus PageMaker including\n"
+                    " versions of Lorem Ipsum.",
+                technicalStacks: '',
+                hyperLink: null,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class _PortfolioCard extends StatelessWidget {
+class _PortfolioCard extends HookWidget {
   const _PortfolioCard({
     required this.leftItem,
     required this.rightItem,
@@ -119,6 +130,7 @@ class _PortfolioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isVisible = useState<bool>(false);
     return Padding(
       padding: const EdgeInsets.all(128),
       child: Row(
@@ -168,8 +180,8 @@ class _DescriptionCard extends StatelessWidget {
           children: [
             const Text(
               'Featured Project',
-              style:
-                  TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.redAccent, fontWeight: FontWeight.bold),
             ),
             Text(
               title,
@@ -179,11 +191,10 @@ class _DescriptionCard extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                    color: Colors.grey,
-                  borderRadius: BorderRadius.all(Radius.circular(8))
-                ),
+                    color: Colors.grey.withOpacity(0.3),
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
                 child: AutoSizeText(
-                    description,
+                  description,
                   maxLines: 10,
                   minFontSize: 16,
                 ),
