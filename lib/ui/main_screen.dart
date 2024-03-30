@@ -5,6 +5,12 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/static_url.dart';
+import 'package:rate_converter_flutter/gen/fonts.gen.dart';
+import 'package:rate_converter_flutter/ui/views/about_card.dart';
+import 'package:rate_converter_flutter/ui/views/contact_zone.dart';
+import 'package:rate_converter_flutter/ui/views/experience_card.dart';
+import 'package:rate_converter_flutter/ui/views/home_card.dart';
+import 'package:rate_converter_flutter/ui/views/portfolio_zone.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../blocs/debug/debug_bloc.dart';
@@ -30,6 +36,14 @@ final dummyList = List.generate(
           ),
         ));
 
+final List<Widget> mainScreenCardList = [
+  HomeCard(),
+  AboutCard(),
+  ExperienceCard(),
+  PortfolioZone(),
+  ContactZone(),
+];
+
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
@@ -39,18 +53,38 @@ class MainScreen extends StatelessWidget {
       builder: (context, state) => Scaffold(
         appBar: AppBar(
             backgroundColor: state.isLightMode ? Colors.white : Colors.black,
-            title: const Text(
+            title: Text(
               'Kaito Kitaya :->',
               style: TextStyle(
-                fontFamily: 'Dos',
-              ),
+                  fontFamily: 'Dos',
+                  color: state.isLightMode ? Colors.black : Colors.white),
             ),
             //TODO: Actions are responsible.
             actions: [
-              TextButton(onPressed: () {}, child: const Text('00. Hello')),
-              TextButton(onPressed: () {}, child: const Text('01. About')),
-              TextButton(onPressed: () {}, child: const Text('02. Experience')),
-              TextButton(onPressed: () {}, child: const Text('03. Portfolio')),
+              _AppBarCandidateTexts(
+                text: '00. Hello',
+                onPressed: () {
+                  debugPrint('hello');
+                },
+              ),
+              _AppBarCandidateTexts(
+                text: '01. About',
+                onPressed: () {
+                  debugPrint('about');
+                },
+              ),
+              _AppBarCandidateTexts(
+                text: '02. Experience',
+                onPressed: () {
+                  debugPrint('experience');
+                },
+              ),
+              _AppBarCandidateTexts(
+                text: '03. Portfolio',
+                onPressed: () {
+                  debugPrint('portfolio');
+                },
+              ),
               InkWell(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -60,7 +94,8 @@ class MainScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5)),
-                        border: Border.all()),
+                        border: Border.all(),
+                        color: state.isLightMode ? null : Colors.white),
                     child: const Text('Contact'),
                   ),
                 ),
@@ -112,11 +147,15 @@ class _TopView extends StatelessWidget {
         ),
         Expanded(
             child: ListView.builder(
-          itemCount: dummyList.length,
+          itemCount: mainScreenCardList.length,
           itemBuilder: (context, index) {
-            return dummyList[index];
+            return Padding(
+              padding: const EdgeInsets.all(128),
+              child: mainScreenCardList[index],
+            );
           },
-        )),
+        )
+        ),
         // TODO: hide scroll bar
         Align(
           alignment: AlignmentDirectional.bottomEnd,
@@ -126,7 +165,12 @@ class _TopView extends StatelessWidget {
               width: 100,
               child: RotatedBox(
                 quarterTurns: 1,
-                child: Text(StaticUrl.mail),
+                child: Text(
+                    StaticUrl.mail,
+                  style: const TextStyle(
+                    fontFamily: FontFamily.dos,
+                  ),
+                ),
               ),
             ),
           ),
@@ -192,5 +236,30 @@ class _SnsIconButton extends StatelessWidget {
         color: color,
       ),
     );
+  }
+}
+
+class _AppBarCandidateTexts extends StatelessWidget {
+  _AppBarCandidateTexts({
+    required this.text,
+    super.key,
+    required this.onPressed,
+  });
+
+  String text;
+  void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ColorThemeBloc, ColorThemeState>(
+        builder: (context, state) => TextButton(
+            onPressed: onPressed,
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: FontFamily.dos,
+                  color: state.isLightMode ? Colors.black54 : Colors.white),
+
+            )));
   }
 }
