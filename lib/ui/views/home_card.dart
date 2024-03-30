@@ -1,4 +1,5 @@
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:rate_converter_flutter/gen/fonts.gen.dart';
 
@@ -9,15 +10,19 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 240),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Hi there! My name is"),
-          Text(
-            'Kaito Kitaya',
-            style: TextStyle(
-              fontSize: 64,
-              fontFamily: FontFamily.dos
+          DefaultTextStyle(
+            style: const TextStyle(
+                fontSize: 64,
+                fontFamily: FontFamily.dos
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TyperAnimatedText('Kaito Kitaya',speed: Duration(milliseconds: 250))
+              ],
             ),
           ),
           // TODO: Make appropriate sentence.
