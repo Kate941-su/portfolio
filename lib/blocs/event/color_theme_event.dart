@@ -7,5 +7,5 @@ part 'color_theme_event.freezed.dart';
 @freezed
 class ColorThemeEvent with _$ColorThemeEvent {
   const factory ColorThemeEvent.themeToggleEvent(
-      {required ThemeMode themeMode}) = _themeToggleEvent;
+      {required bool isLightMode}) = _themeToggleEvent;
 }

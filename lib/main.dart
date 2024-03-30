@@ -3,7 +3,6 @@ import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/ui/main_screen.dart';
-import 'blocs/counter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
             primaryColor: AppColor.darkTheme,
             useMaterial3: true,
           ),
-          themeMode: state.themeMode,
+          themeMode: ThemeMode.light,
           home: const MyHomePage(title: 'Flutter Demo Home Page'),
         ),
       ),

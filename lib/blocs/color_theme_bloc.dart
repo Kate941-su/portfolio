@@ -7,7 +7,7 @@ class ColorThemeBloc extends Bloc<ColorThemeEvent, ColorThemeState> {
     on<ColorThemeEvent>((event, emit) {
       event.map(
           themeToggleEvent: (_) =>
-              emit(state.copyWith(themeMode: event.themeMode)));
+              emit(state.copyWith(isLightMode: event.isLightMode)));
     });
   }
 }
