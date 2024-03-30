@@ -9,6 +9,7 @@ final List<Widget> dummyList = [
 
 final List<Widget> experienceList = [
   const _ExperienceComponent(
+    company: 'ibis Inc.',
     description:
         "Joining as a Part-time job since I was a master's degree student\n"
         "Continuously refined development skills through ongoing education and\n"
@@ -21,6 +22,7 @@ final List<Widget> experienceList = [
     endDate: 'March 2022',
   ),
   const _ExperienceComponent(
+    company: 'YAMAHA Corporation',
     description:
         "I have worked as an embedded software engineer on network equipment\n"
         "I also have experience in managing in-corporate network infrastructure in this company.\n",
@@ -29,6 +31,7 @@ final List<Widget> experienceList = [
     endDate: 'May 2023',
   ),
   const _ExperienceComponent(
+    company: 'N zigen Inc',
     description:
         "Experienced in mobile application development and project management, \n"
         "adept at driving end-to-end project execution, ensuring seamless CI/CD implementation,\n"
@@ -45,12 +48,15 @@ final List<Widget> experienceList = [
 
 class _ExperienceComponent extends StatelessWidget {
   const _ExperienceComponent(
-      {required this.description,
+      {
+        required this.company,
+        required this.description,
       required this.role,
       required this.startDate,
       this.endDate,
       super.key});
 
+  final String company;
   final String description;
   final String role;
   final String startDate;
@@ -59,13 +65,17 @@ class _ExperienceComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 720,
       padding: const EdgeInsets.all(64.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            description,
+            company,
+            style: const TextStyle(
+              fontSize: 48,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Text(
             role,
@@ -74,7 +84,14 @@ class _ExperienceComponent extends StatelessWidget {
                 color: Colors.redAccent,
                 fontSize: 16),
           ),
-          Text('$startDate - $endDate')
+          Text(
+            description,
+          ),
+          Text('$startDate - $endDate',
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          )
         ],
       ),
     );
