@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:rate_converter_flutter/gen/fonts.gen.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard({super.key});
@@ -14,7 +15,7 @@ class HomeCard extends StatelessWidget {
           'Kaito Kitaya',
           style: TextStyle(
             fontSize: 64,
-
+            fontFamily: FontFamily.dos
           ),
         ),
         // TODO: Make appropriate sentence.

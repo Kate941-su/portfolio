@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       create: (context) => ColorThemeBloc(),
       child: BlocBuilder<ColorThemeBloc, ColorThemeState>(
         builder: (context, state) => MaterialApp(
+          scrollBehavior: MyCustomScrollBehavior(),
           title: 'Kaito Kitaya Porfolio',
           theme: ThemeData(
             primaryColor: AppColor.lightTheme,
@@ -44,6 +47,15 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MainScreen();
   }
+}
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
 }
 
 // Widget _counter(BuildContext context, int counter) {
