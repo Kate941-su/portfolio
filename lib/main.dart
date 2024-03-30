@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
+import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/ui/main_screen.dart';
 import 'blocs/counter_bloc.dart';
@@ -14,17 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.lightTheme),
-          useMaterial3: true,
+      create: (context) => ColorThemeBloc(),
+      child: BlocBuilder<ColorThemeBloc, ColorThemeState>(
+        builder: (context, state) => MaterialApp(
+          title: 'Kaito Kitaya Porfolio',
+          theme: ThemeData(
+            primaryColor: AppColor.lightTheme,
+            useMaterial3: true,
+          ),
+          darkTheme: ThemeData(
+            primaryColor: AppColor.darkTheme,
+            useMaterial3: true,
+          ),
+          themeMode: state.themeMode,
+          home: const MyHomePage(title: 'Flutter Demo Home Page'),
         ),
-        darkTheme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.darkTheme)
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
     );
   }

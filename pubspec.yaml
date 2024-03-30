@@ -23,6 +23,8 @@ dependencies:
   simple_shadow: ^0.3.1
   flutter_hooks: ^0.20.5
   url_launcher: ^6.2.4
+  toggle_switch: ^2.3.0
+  font_awesome_flutter: ^10.7.0
 
 
 dev_dependencies:
