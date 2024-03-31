@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
+import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
+import 'package:rate_converter_flutter/constant/app_color.dart';
 
 final List<Widget> dummyList = [
   Text("data"),
@@ -48,9 +52,8 @@ final List<Widget> experienceList = [
 
 class _ExperienceComponent extends StatelessWidget {
   const _ExperienceComponent(
-      {
-        required this.company,
-        required this.description,
+      {required this.company,
+      required this.description,
       required this.role,
       required this.startDate,
       this.endDate,
@@ -64,46 +67,55 @@ class _ExperienceComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 1
-        ),
-        boxShadow: [BoxShadow(
-          color: Colors.yellow.withOpacity(0.5),
-          blurRadius: 4,
-          offset: const Offset(0,3),
-        )]
-      ),
-      width: 720,
-      padding: const EdgeInsets.all(64.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            company,
-            style: const TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
+    return BlocBuilder<ColorThemeBloc, ColorThemeState>(
+        builder: (context, state) {
+      return Container(
+        decoration: BoxDecoration(border: Border.all(width: 1), boxShadow: [
+          BoxShadow(
+            color: Colors.yellow.withOpacity(0.5),
+            blurRadius: 4,
+            offset: const Offset(0, 3),
+          )
+        ]),
+        width: 720,
+        padding: const EdgeInsets.all(64.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              company,
+              style: TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  color: AppColor.getThemeColorInverse(
+                      isLightMode: state.isLightMode)),
             ),
-          ),
-          Text(
-            role,
-            style: const TextStyle(
+            Text(
+              role,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.redAccent,
-                fontSize: 16),
-          ),
-          Text(
-            description,
-          ),
-          Text( endDate == null ? '$startDate - current' : '$startDate - $endDate',
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
-          )
-        ],
-      ),
-    );
+            Text(
+              description,
+              style: TextStyle(
+                  color: AppColor.getThemeColorInverse(
+                      isLightMode: state.isLightMode)),
+            ),
+            Text(
+              endDate == null
+                  ? '$startDate - current'
+                  : '$startDate - $endDate',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: AppColor.getThemeColorInverse(
+                      isLightMode: state.isLightMode)),
+            )
+          ],
+        ),
+      );
+    });
   }
 }

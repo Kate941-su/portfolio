@@ -34,7 +34,7 @@ class HomeCard extends StatelessWidget {
               child: AnimatedTextKit(
                 animatedTexts: [
                   TyperAnimatedText('Kaito Kitaya',
-                      speed: Configuration.animeDuration),
+                      speed: Configuration.animeDuration250),
                 ],
               ),
             ),

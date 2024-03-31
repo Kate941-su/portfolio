@@ -39,7 +39,7 @@ class ExperienceCard extends HookWidget {
           maintainState: true,
           child: AnimatedOpacity(
             opacity: isVisible.value ? 1.0 : 0.0,
-            duration: Configuration.animeDuration,
+            duration: Configuration.animeDuration500,
             child: Row(children: [
               Padding(
                 padding: const EdgeInsets.only(right: 128),
@@ -64,7 +64,7 @@ class ExperienceCard extends HookWidget {
                             itemCount: experienceList.length,
                             itemBuilder: (context, index) {
                               return AnimatedPadding(
-                                  duration: Configuration.animeDuration,
+                                  duration: Configuration.animeDuration500,
                                   curve: Curves.fastEaseInToSlowEaseOut,
                                   padding: EdgeInsets.all(
                                       indexState.value == index ? 0 : 8),

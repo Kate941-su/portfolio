@@ -17,13 +17,12 @@ class AboutCard extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final isVisible = useState<bool>(false);
-    final visibilityDetectorController = VisibilityDetectorController();
 
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
       builder: (context, state) => VisibilityDetector(
         key: const Key('about-card'),
         onVisibilityChanged: (VisibilityInfo info) {
-          if (info.visibleFraction > 0.3) {
+          if (info.visibleFraction > 0.2) {
             isVisible.value = true;
           } else {
             isVisible.value = false;
@@ -34,7 +33,7 @@ class AboutCard extends HookWidget {
           maintainAnimation: true,
           maintainState: true,
           child: AnimatedOpacity(
-            duration: Configuration.animeDuration,
+            duration: Configuration.animeDuration500,
             opacity: isVisible.value ? 1.0 : 0.0,
             child: Row(
               children: [

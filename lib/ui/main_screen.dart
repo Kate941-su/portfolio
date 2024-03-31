@@ -24,19 +24,6 @@ enum ColorThemeIndex {
   dark,
 }
 
-final dummyList = List.generate(
-    20,
-    (index) => Container(
-          margin: EdgeInsets.symmetric(vertical: 128, horizontal: 64),
-          decoration: BoxDecoration(color: Colors.blue),
-          width: 300,
-          height: 300,
-          child: Text(
-            "Hello World",
-            style: TextStyle(fontFamily: 'Dos', fontSize: 36),
-          ),
-        ));
-
 final List<Widget> mainScreenCardList = [
   HomeCard(),
   AboutCard(),
@@ -175,7 +162,7 @@ class _TopView extends StatelessWidget {
                   width: 100,
                   child: RotatedBox(
                     quarterTurns: 1,
-                    child: Text(
+                    child: SelectableText(
                       StaticUrl.mail,
                       style: TextStyle(
                         color: AppColor.getThemeColorInverse(

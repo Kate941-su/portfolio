@@ -23,6 +23,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/cat.jpg
   AssetGenImage get cat => const AssetGenImage('assets/images/cat.jpg');
 
+  /// File path: assets/images/dart_package.png
+  AssetGenImage get dartPackage =>
+      const AssetGenImage('assets/images/dart_package.png');
+
   /// File path: assets/images/face_photo.jpg
   AssetGenImage get facePhoto =>
       const AssetGenImage('assets/images/face_photo.jpg');
@@ -30,14 +34,36 @@ class $AssetsImagesGen {
   /// File path: assets/images/green.png
   AssetGenImage get green => const AssetGenImage('assets/images/green.png');
 
+  /// File path: assets/images/portfolio.png
+  AssetGenImage get portfolio =>
+      const AssetGenImage('assets/images/portfolio.png');
+
   /// File path: assets/images/room.jpg
   AssetGenImage get room => const AssetGenImage('assets/images/room.jpg');
+
+  /// File path: assets/images/simple_blood_pressure.png
+  AssetGenImage get simpleBloodPressure =>
+      const AssetGenImage('assets/images/simple_blood_pressure.png');
+
+  /// File path: assets/images/swift_package.png
+  AssetGenImage get swiftPackage =>
+      const AssetGenImage('assets/images/swift_package.png');
 
   /// File path: assets/images/yoga.jpg
   AssetGenImage get yoga => const AssetGenImage('assets/images/yoga.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [cat, facePhoto, green, room, yoga];
+  List<AssetGenImage> get values => [
+        cat,
+        dartPackage,
+        facePhoto,
+        green,
+        portfolio,
+        room,
+        simpleBloodPressure,
+        swiftPackage,
+        yoga
+      ];
 }
 
 class $AssetsIconsSnsGen {
