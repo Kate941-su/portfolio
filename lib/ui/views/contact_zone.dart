@@ -18,7 +18,7 @@ class ContactZone extends StatelessWidget {
         child: Column(
           children: [
             CardTitle(
-              title: 'Thank You For Coming My Portfolio Site!',
+              title: 'My Skills',
               color:
                   AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
             ),

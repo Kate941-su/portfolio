@@ -4,23 +4,12 @@ import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
 
-final List<Widget> dummyList = [
-  Text("data"),
-  Text("data"),
-  Text("data"),
-  Text("data"),
-];
-
 final List<Widget> experienceList = [
   const _ExperienceComponent(
     company: 'ibis Inc.',
     description:
-        "Joining as a Part-time job since I was a master's degree student\n"
-        "Continuously refined development skills through ongoing education and\n"
-        " training opportunities, staying current with industry advancements.\n"
-        "Streamlined codebase using version control systems such as Git to\n"
-        " maintain organized repositories for collaborative projects easily accessible to team members.\n"
-        "I have comprehensive skills in creating cross- platform applications (iOS, Android).\n",
+        "Joining as a Part-time job when I was a master's degree student. "
+        "I gained comprehensive skills in creating cross- platform applications (iOS, Android).",
     role: 'Mobile Application Developer',
     startDate: 'March 2021',
     endDate: 'March 2022',
@@ -28,23 +17,24 @@ final List<Widget> experienceList = [
   const _ExperienceComponent(
     company: 'YAMAHA Corporation',
     description:
-        "I have worked as an embedded software engineer on network equipment\n"
-        "I also have experience in managing in-corporate network infrastructure in this company.\n",
-    role: 'Mobile Application Developer',
+        "I have worked as an embedded software engineer on network equipment. "
+        "I also have experience in managing in-corporate network infrastructure in this company.",
+    role: 'Embedded Software Engineer',
     startDate: 'April 2022',
     endDate: 'May 2023',
   ),
   const _ExperienceComponent(
     company: 'N zigen Inc',
     description:
-        "Experienced in mobile application development and project management, \n"
-        "adept at driving end-to-end project execution, ensuring seamless CI/CD implementation,\n"
-        " and contributing to development efforts. Key responsibilities include:\n"
-        "Project Management: Lead and coordinate mobile application projects,\n"
-        " ensuring on-time delivery and adherence to quality standards.\n"
-        "CI/CD Implementation: Establish and maintain robust CI/CD pipelines for\n"
-        " efficient build, test, and deployment processes. Development: Proficient\n"
-        " in Flutter, Kotlin, and Swift, with a focus on delivering scalable and feature-rich mobile applications.\n",
+        "Experienced in mobile application development and project management,"
+        "adept at driving end-to-end project execution, ensuring seamless CI/CD implementation,"
+        " and contributing to development efforts.\n\n"
+        "Project Management: Lead and coordinate mobile application projects,"
+        " ensuring on-time delivery and adherence to quality standards.\n\n"
+        "CI/CD Implementation: Establish and maintain robust CI/CD pipelines for"
+        " efficient build, test, and deployment processes.\n\n"
+        "Development: Proficient"
+        " in Flutter, Kotlin, and Swift, with a focus on delivering scalable and feature-rich mobile applications.",
     role: 'Mobile Application Developer',
     startDate: 'May 2023',
   ),

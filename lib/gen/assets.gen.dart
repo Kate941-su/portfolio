@@ -27,6 +27,9 @@ class $AssetsImagesGen {
   AssetGenImage get dartPackage =>
       const AssetGenImage('assets/images/dart_package.png');
 
+  /// File path: assets/images/dental.png
+  AssetGenImage get dental => const AssetGenImage('assets/images/dental.png');
+
   /// File path: assets/images/face_photo.jpg
   AssetGenImage get facePhoto =>
       const AssetGenImage('assets/images/face_photo.jpg');
@@ -56,6 +59,7 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         cat,
         dartPackage,
+        dental,
         facePhoto,
         green,
         portfolio,

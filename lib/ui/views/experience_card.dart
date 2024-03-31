@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
@@ -23,6 +24,8 @@ class ExperienceCard extends HookWidget {
     final indexState = useState<int>(0);
     final isVisible = useState<bool>(false);
 
+    final cursorIcon = useState<SystemMouseCursor>(SystemMouseCursors.grab);
+
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
       builder: (context, state) => VisibilityDetector(
         key: const Key('experience_card'),
@@ -40,65 +43,78 @@ class ExperienceCard extends HookWidget {
           child: AnimatedOpacity(
             opacity: isVisible.value ? 1.0 : 0.0,
             duration: Configuration.animeDuration500,
-            child: Row(children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 128),
-                child: SizedBox(
-                  width: 900,
-                  height: 720,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CardTitle(
-                        title: '02. Experience',
-                        color: AppColor.getThemeColorInverse(
-                            isLightMode: state.isLightMode),
-                      ),
-                      Flexible(
-                        child: PageView.builder(
-                            controller: controller,
-                            onPageChanged: (index) {
-                              indexState.value = index;
-                            },
-                            scrollDirection: Axis.horizontal,
-                            itemCount: experienceList.length,
-                            itemBuilder: (context, index) {
-                              return AnimatedPadding(
-                                  duration: Configuration.animeDuration500,
-                                  curve: Curves.fastEaseInToSlowEaseOut,
-                                  padding: EdgeInsets.all(
-                                      indexState.value == index ? 0 : 8),
-                                  child: experienceList[index]);
-                            }),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: const EdgeInsets.all(32),
-                          child: SmoothPageIndicator(
-                            count: experienceList.length,
-                            controller: controller,
-                            effect: const ScrollingDotsEffect(
-                              activeStrokeWidth: 2.6,
-                              activeDotScale: 1.3,
-                              maxVisibleDots: 5,
-                              radius: 8,
-                              spacing: 10,
-                              dotHeight: 12,
-                              dotWidth: 12,
-                            ),
-                            onDotClicked: (index) {
-                              // TODO: Change history by clicking circle list.
-                              // indexState.value = index;
-                            },
+            child: Listener(
+              onPointerDown: (_){
+                debugPrint("down");
+                cursorIcon.value = SystemMouseCursors.grabbing;
+              },
+              onPointerUp: (_){
+                debugPrint("up");
+                cursorIcon.value = SystemMouseCursors.grab;
+              },
+              child: MouseRegion(
+                cursor: cursorIcon.value,
+                child: Row(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 128),
+                    child: SizedBox(
+                      width: 900,
+                      height: 720,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CardTitle(
+                            title: '02. Experience',
+                            color: AppColor.getThemeColorInverse(
+                                isLightMode: state.isLightMode),
                           ),
-                        ),
+                          Flexible(
+                            child: PageView.builder(
+                                controller: controller,
+                                onPageChanged: (index) {
+                                  indexState.value = index;
+                                },
+                                scrollDirection: Axis.horizontal,
+                                itemCount: experienceList.length,
+                                itemBuilder: (context, index) {
+                                  return AnimatedPadding(
+                                      duration: Configuration.animeDuration500,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                      padding: EdgeInsets.all(
+                                          indexState.value == index ? 0 : 8),
+                                      child: experienceList[index]);
+                                }),
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.all(32),
+                              child: SmoothPageIndicator(
+                                count: experienceList.length,
+                                controller: controller,
+                                effect: const ScrollingDotsEffect(
+                                  activeStrokeWidth: 2.6,
+                                  activeDotScale: 1.3,
+                                  maxVisibleDots: 5,
+                                  radius: 8,
+                                  spacing: 10,
+                                  dotHeight: 12,
+                                  dotWidth: 12,
+                                ),
+                                onDotClicked: (index) {
+                                  // TODO: Change history by clicking circle list.
+                                  // indexState.value = index;
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ]),
               ),
-            ]),
+            ),
           ),
         ),
       ),
