@@ -19,18 +19,13 @@ import '../blocs/event/color_theme_event.dart';
 import '../gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'main_screen_list.dart';
+
 enum ColorThemeIndex {
   light,
   dark,
 }
 
-final List<Widget> mainScreenCardList = [
-  HomeCard(),
-  AboutCard(),
-  ExperienceCard(),
-  PortfolioZone(),
-  ContactZone(),
-];
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -38,61 +33,91 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
-      builder: (context, state) => Scaffold(
-        appBar: AppBar(
-            backgroundColor: state.isLightMode ? Colors.white : Colors.black,
-            title: Text(
-              'Kaito Kitaya :->',
-              style: TextStyle(
-                  fontFamily: 'Dos',
-                  color: state.isLightMode ? Colors.black : Colors.white),
-            ),
-            //TODO: Actions are responsible.
-            actions: [
-              _AppBarCandidateTexts(
-                text: '00. Hello',
-                onPressed: () {
-                  debugPrint('hello');
-                },
-              ),
-              _AppBarCandidateTexts(
-                text: '01. About',
-                onPressed: () {
-                  debugPrint('about');
-                },
-              ),
-              _AppBarCandidateTexts(
-                text: '02. Experience',
-                onPressed: () {
-                  debugPrint('experience');
-                },
-              ),
-              _AppBarCandidateTexts(
-                text: '03. Portfolio',
-                onPressed: () {
-                  debugPrint('portfolio');
-                },
-              ),
-              // InkWell(
-              //   child: Padding(
-              //     padding: const EdgeInsets.symmetric(horizontal: 24),
-              //     child: Container(
-              //       padding: const EdgeInsets.symmetric(
-              //           vertical: 10, horizontal: 16),
-              //       decoration: BoxDecoration(
-              //           borderRadius:
-              //               const BorderRadius.all(Radius.circular(5)),
-              //           border: Border.all(),
-              //           color: state.isLightMode ? null : Colors.white),
-              //       child: const Text('Contact'),
-              //     ),
-              //   ),
-              //   onTap: () {},
-              // ),
-              const _ColorThemeToggleButton(),
-            ]),
-        body: const _TopView(),
-      ),
+      builder: (context, state) =>
+          Scaffold(
+            appBar: AppBar(
+                backgroundColor: state.isLightMode ? Colors.white : Colors
+                    .black,
+                title: Text(
+                  'Kaito Kitaya :->',
+                  style: TextStyle(
+                      fontFamily: 'Dos',
+                      color: state.isLightMode ? Colors.black : Colors.white),
+                ),
+                //TODO: Actions are responsible.
+                actions: [
+                  _AppBarCandidateTexts(
+                    text: '00. Hello',
+                    onPressed: () {
+                      debugPrint('hello');
+                      if (homeCardKey.currentContext != null) {
+                        Scrollable.ensureVisible(
+                            homeCardKey.currentContext!, alignment: 0.5,
+                            duration: const Duration(milliseconds: 1000));
+                      }
+                    },
+                  ),
+                  _AppBarCandidateTexts(
+                    text: '01. About',
+                    onPressed: () {
+                      debugPrint('about');
+                      if (aboutCardKey.currentContext != null) {
+                        Scrollable.ensureVisible(
+                            aboutCardKey.currentContext!, alignment: 0.5,
+                            duration: const Duration(milliseconds: 1000));
+                      }
+                    },
+                  ),
+                  _AppBarCandidateTexts(
+                    text: '02. Experience',
+                    onPressed: () {
+                      if (experienceCardKey.currentContext != null) {
+                        Scrollable.ensureVisible(
+                            experienceCardKey.currentContext!, alignment: 0.5,
+                            duration: const Duration(milliseconds: 1000));
+                      }
+                    },
+                  ),
+                  _AppBarCandidateTexts(
+                    text: '03. Portfolio',
+                    onPressed: () {
+                      if (portfolioZonKey.currentContext != null) {
+                        Scrollable.ensureVisible(
+                            portfolioZonKey.currentContext!, alignment: 0.5,
+                            duration: const Duration(milliseconds: 1000));
+                      }
+                    },
+                  ),
+                  _AppBarCandidateTexts(
+                    text: '04. Contact',
+                    onPressed: () {
+                      if (contactZonKey.currentContext != null) {
+                        Scrollable.ensureVisible(
+                            contactZonKey.currentContext!, alignment: 0.5,
+                            duration: const Duration(milliseconds: 1000));
+                      }
+                    },
+                  ),
+                  // InkWell(
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.symmetric(horizontal: 24),
+                  //     child: Container(
+                  //       padding: const EdgeInsets.symmetric(
+                  //           vertical: 10, horizontal: 16),
+                  //       decoration: BoxDecoration(
+                  //           borderRadius:
+                  //               const BorderRadius.all(Radius.circular(5)),
+                  //           border: Border.all(),
+                  //           color: state.isLightMode ? null : Colors.white),
+                  //       child: const Text('Contact'),
+                  //     ),
+                  //   ),
+                  //   onTap: () {},
+                  // ),
+                  const _ColorThemeToggleButton(),
+                ]),
+            body: const _TopView(),
+          ),
     );
   }
 }
@@ -103,80 +128,81 @@ class _TopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
-      builder: (context, state) => ColoredBox(
-        color: AppColor.getThemeColor(isLightMode: state.isLightMode),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 48.0),
-                    child: _SnsIconButton(
-                      imagePath: Assets.icons.sns.github.path,
-                      linkPath: StaticUrl.github,
-                      color: AppColor.getThemeColorInverse(
-                          isLightMode: state.isLightMode),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 48.0),
-                    child: _SnsIconButton(
-                      imagePath: Assets.icons.sns.linkedin.path,
-                      linkPath: StaticUrl.linkedin,
-                      color: AppColor.getThemeColorInverse(
-                          isLightMode: state.isLightMode),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 48.0),
-                    child: _SnsIconButton(
-                      imagePath: Assets.icons.sns.x.path,
-                      linkPath: StaticUrl.x,
-                      color: AppColor.getThemeColorInverse(
-                          isLightMode: state.isLightMode),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-                child: ListView.builder(
-              itemCount: mainScreenCardList.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(128),
-                  child: mainScreenCardList[index],
-                );
-              },
-            )),
-            // TODO: hide scroll bar
-            Align(
-              alignment: AlignmentDirectional.bottomEnd,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
-                child: SizedBox(
+      builder: (context, state) =>
+          ColoredBox(
+            color: AppColor.getThemeColor(isLightMode: state.isLightMode),
+            child: Row(
+              children: [
+                SizedBox(
                   width: 100,
-                  child: RotatedBox(
-                    quarterTurns: 1,
-                    child: SelectableText(
-                      StaticUrl.mail,
-                      style: TextStyle(
-                        color: AppColor.getThemeColorInverse(
-                            isLightMode: state.isLightMode),
-                        fontFamily: FontFamily.dos,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48.0),
+                        child: _SnsIconButton(
+                          imagePath: Assets.icons.sns.github.path,
+                          linkPath: StaticUrl.github,
+                          color: AppColor.getThemeColorInverse(
+                              isLightMode: state.isLightMode),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48.0),
+                        child: _SnsIconButton(
+                          imagePath: Assets.icons.sns.linkedin.path,
+                          linkPath: StaticUrl.linkedin,
+                          color: AppColor.getThemeColorInverse(
+                              isLightMode: state.isLightMode),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48.0),
+                        child: _SnsIconButton(
+                          imagePath: Assets.icons.sns.x.path,
+                          linkPath: StaticUrl.x,
+                          color: AppColor.getThemeColorInverse(
+                              isLightMode: state.isLightMode),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    child: ListView.builder(
+                      itemCount: mainScreenCardList.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(128),
+                          child: mainScreenCardList[index],
+                        );
+                      },
+                    )),
+                // TODO: hide scroll bar
+                Align(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  child: Padding(
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
+                    child: SizedBox(
+                      width: 100,
+                      child: RotatedBox(
+                        quarterTurns: 1,
+                        child: SelectableText(
+                          StaticUrl.mail,
+                          style: TextStyle(
+                            color: AppColor.getThemeColorInverse(
+                                isLightMode: state.isLightMode),
+                            fontFamily: FontFamily.dos,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 }
@@ -197,7 +223,8 @@ class _ColorThemeToggleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
-        builder: (context, state) => LiteRollingSwitch(
+        builder: (context, state) =>
+            LiteRollingSwitch(
               value: state.isLightMode,
               textOn: 'light',
               textOff: 'dark',
@@ -253,13 +280,14 @@ class _AppBarCandidateTexts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
-        builder: (context, state) => TextButton(
-            onPressed: onPressed,
-            child: Text(
-              text,
-              style: TextStyle(
-                  fontFamily: FontFamily.dos,
-                  color: state.isLightMode ? Colors.black54 : Colors.white),
-            )));
+        builder: (context, state) =>
+            TextButton(
+                onPressed: onPressed,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                      fontFamily: FontFamily.dos,
+                      color: state.isLightMode ? Colors.black54 : Colors.white),
+                )));
   }
 }
