@@ -99,7 +99,7 @@ class PortfolioZone extends StatelessWidget {
                   description:
                   "This portfolio shows my UI, state management skills, and six sense!(haha). Mobile application developer has to have multiple skills about UI, state management, REST and so on and has to output these ones. That's why I created it from scratch.",
                   technicalStacks: 'Dart|Flutter|BLoC',
-                  hyperLink: 'https://kate941-su.github.io/kaito_kitaya_portfolio/',
+                  hyperLink: 'https://github.com/Kate941-su/portfolio',
                 ),
               ),
               _PortfolioCard(
