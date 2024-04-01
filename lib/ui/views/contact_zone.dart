@@ -23,7 +23,13 @@ class ContactZone extends StatelessWidget {
               color:
                   AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
             ),
-            const Text('⭐️s are my strong knowledge are.'),
+            Text(
+              '⭐️s are my strong knowledge are.',
+              style: TextStyle(
+                color: AppColor.getThemeColorInverse(
+                    isLightMode: state.isLightMode),
+              ),
+            ),
             SkillCardGrid(),
           ],
         ),
