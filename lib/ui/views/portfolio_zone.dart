@@ -115,6 +115,31 @@ class PortfolioZone extends StatelessWidget {
                   hyperLink: 'https://hamamatsu-nakaze-dental.com/',
                 ),
               ),
+              _PortfolioCard(
+                rightItem: _ImageCard(
+                  image: Assets.images.liveApp,
+                ),
+                leftItem: _DescriptionCard(
+                  title: 'Broadcast Live Application',
+                  jobKind: JobKind.featureProject.name,
+                  description:
+                  "This live streaming application is developed by Flutter. But a lot of features are written in native languages."
+                  "I developed core features and many UIs in this project. In addition, I set up VRT and CI/CD environment(Github Actions).",
+                  technicalStacks: 'Flutter|Dart|Swift|Kotlin',
+                ),
+              ),
+              _PortfolioCard(
+                leftItem: _ImageCard(
+                  image: Assets.images.paint,
+                ),
+                rightItem: _DescriptionCard(
+                  title: 'Painting Application',
+                  jobKind: JobKind.featureProject.name,
+                  description:
+                  "This is my first team project. I developed some new features that are needed high level mathematics and deep knowledge of C++. But I could gain many important things to develop mobile applications.",
+                  technicalStacks: 'C++|objective C',
+                ),
+              ),
             ],
           ),
     );
