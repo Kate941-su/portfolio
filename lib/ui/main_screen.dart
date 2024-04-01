@@ -7,11 +7,6 @@ import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/constant/static_url.dart';
 import 'package:rate_converter_flutter/gen/fonts.gen.dart';
-import 'package:rate_converter_flutter/ui/views/about_card.dart';
-import 'package:rate_converter_flutter/ui/views/contact_zone.dart';
-import 'package:rate_converter_flutter/ui/views/experience_card.dart';
-import 'package:rate_converter_flutter/ui/views/home_card.dart';
-import 'package:rate_converter_flutter/ui/views/portfolio_zone.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../blocs/debug/debug_bloc.dart';
@@ -89,7 +84,7 @@ class MainScreen extends StatelessWidget {
                     },
                   ),
                   _AppBarCandidateTexts(
-                    text: '04. Contact',
+                    text: '04. Skill',
                     onPressed: () {
                       if (contactZonKey.currentContext != null) {
                         Scrollable.ensureVisible(
@@ -169,15 +164,25 @@ class _TopView extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                    child: ListView.builder(
-                      itemCount: mainScreenCardList.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(128),
-                          child: mainScreenCardList[index],
-                        );
-                      },
-                    )),
+                    // child: ListView.builder(
+                    //   key: const PageStorageKey('listView'),
+                    //   itemCount: mainScreenCardList.length,
+                    //   itemBuilder: (context, index) {
+                    //     return Padding(
+                    //       padding: const EdgeInsets.all(128),
+                    //       child: mainScreenCardList[index],
+                    //     );
+                    //   },
+                    // ),
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 64, left: 128),
+                      child: Column(
+                        children: mainScreenCardList
+                      ),
+                    ),
+                  ),
+                ),
                 // TODO: hide scroll bar
                 Align(
                   alignment: AlignmentDirectional.bottomEnd,

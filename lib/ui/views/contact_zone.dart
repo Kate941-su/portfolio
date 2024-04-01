@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
+import 'package:rate_converter_flutter/ui/views/component/skill_card.dart';
 
 import '../../constant/app_color.dart';
 import 'component/card_title.dart';
@@ -22,6 +23,8 @@ class ContactZone extends StatelessWidget {
               color:
                   AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
             ),
+            const Text('⭐️s are my strong knowledge are.'),
+            SkillCardGrid(),
           ],
         ),
       );

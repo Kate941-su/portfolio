@@ -54,6 +54,7 @@ flutter_gen:
 flutter:
   assets:
     - assets/images/
+    - assets/icons/skill/
     - assets/icons/sns/
 
   fonts:

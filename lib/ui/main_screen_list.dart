@@ -11,10 +11,16 @@ final experienceCardKey = GlobalKey();
 final portfolioZonKey = GlobalKey();
 final contactZonKey = GlobalKey();
 
+Widget blankBox = const SizedBox.square(dimension: 180,);
+
 final List<Widget> mainScreenCardList = [
   HomeCard(key: homeCardKey,),
+  blankBox,
   AboutCard(key: aboutCardKey,),
+  blankBox,
   ExperienceCard(key: experienceCardKey,),
+  blankBox,
   PortfolioZone(key: portfolioZonKey,),
+  blankBox,
   ContactZone(key: contactZonKey,),
 ];

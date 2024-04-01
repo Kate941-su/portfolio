@@ -14,6 +14,7 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  $AssetsIconsSkillGen get skill => const $AssetsIconsSkillGen();
   $AssetsIconsSnsGen get sns => const $AssetsIconsSnsGen();
 }
 
@@ -67,6 +68,71 @@ class $AssetsImagesGen {
         simpleBloodPressure,
         swiftPackage,
         yoga
+      ];
+}
+
+class $AssetsIconsSkillGen {
+  const $AssetsIconsSkillGen();
+
+  /// File path: assets/icons/skill/android.svg
+  SvgGenImage get android =>
+      const SvgGenImage('assets/icons/skill/android.svg');
+
+  /// File path: assets/icons/skill/apple.svg
+  SvgGenImage get apple => const SvgGenImage('assets/icons/skill/apple.svg');
+
+  /// File path: assets/icons/skill/bloc.svg
+  SvgGenImage get bloc => const SvgGenImage('assets/icons/skill/bloc.svg');
+
+  /// File path: assets/icons/skill/cp.svg
+  SvgGenImage get cp => const SvgGenImage('assets/icons/skill/cp.svg');
+
+  /// File path: assets/icons/skill/flutter.svg
+  SvgGenImage get flutter =>
+      const SvgGenImage('assets/icons/skill/flutter.svg');
+
+  /// File path: assets/icons/skill/githubactions.svg
+  SvgGenImage get githubactions =>
+      const SvgGenImage('assets/icons/skill/githubactions.svg');
+
+  /// File path: assets/icons/skill/kotlin.svg
+  SvgGenImage get kotlin => const SvgGenImage('assets/icons/skill/kotlin.svg');
+
+  /// File path: assets/icons/skill/linux.svg
+  SvgGenImage get linux => const SvgGenImage('assets/icons/skill/linux.svg');
+
+  /// File path: assets/icons/skill/nodejs.svg
+  SvgGenImage get nodejs => const SvgGenImage('assets/icons/skill/nodejs.svg');
+
+  /// File path: assets/icons/skill/python.svg
+  SvgGenImage get python => const SvgGenImage('assets/icons/skill/python.svg');
+
+  /// File path: assets/icons/skill/riverpod.png
+  AssetGenImage get riverpod =>
+      const AssetGenImage('assets/icons/skill/riverpod.png');
+
+  /// File path: assets/icons/skill/swift.svg
+  SvgGenImage get swift => const SvgGenImage('assets/icons/skill/swift.svg');
+
+  /// File path: assets/icons/skill/typescript.svg
+  SvgGenImage get typescript =>
+      const SvgGenImage('assets/icons/skill/typescript.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        android,
+        apple,
+        bloc,
+        cp,
+        flutter,
+        githubactions,
+        kotlin,
+        linux,
+        nodejs,
+        python,
+        riverpod,
+        swift,
+        typescript
       ];
 }
 
