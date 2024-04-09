@@ -14,7 +14,8 @@ class ContactZone extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ColorThemeBloc, ColorThemeState>(
         builder: (context, state) {
-      return Padding(
+      return Container(
+        width: 1200,
         padding: const EdgeInsets.only(right: 128),
         child: Column(
           children: [
@@ -24,7 +25,7 @@ class ContactZone extends StatelessWidget {
                   AppColor.getThemeColorInverse(isLightMode: state.isLightMode),
             ),
             Text(
-              '⭐️s are my strong knowledge are.',
+              '⭐️s are my strong knowledge areas.',
               style: TextStyle(
                 color: AppColor.getThemeColorInverse(
                     isLightMode: state.isLightMode),

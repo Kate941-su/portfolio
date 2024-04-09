@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
+import 'package:mailto/mailto.dart';
 import 'package:rate_converter_flutter/blocs/color_theme_bloc.dart';
 import 'package:rate_converter_flutter/blocs/state/color_theme_state.dart';
 import 'package:rate_converter_flutter/constant/app_color.dart';
 import 'package:rate_converter_flutter/constant/static_url.dart';
 import 'package:rate_converter_flutter/gen/fonts.gen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../blocs/debug/debug_bloc.dart';
@@ -191,14 +193,23 @@ class _TopView extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
                     child: SizedBox(
                       width: 100,
-                      child: RotatedBox(
-                        quarterTurns: 1,
-                        child: SelectableText(
-                          StaticUrl.mail,
-                          style: TextStyle(
-                            color: AppColor.getThemeColorInverse(
-                                isLightMode: state.isLightMode),
-                            fontFamily: FontFamily.dos,
+                      child: InkWell(
+                        onTap: () async {
+                          final uri = Uri(
+                            scheme: 'mailto',
+                            path: StaticUrl.mail,
+                          );
+                          final result = await launchUrl(uri);
+                        },
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                          child: Text(
+                            StaticUrl.mail,
+                            style: TextStyle(
+                              color: AppColor.getThemeColorInverse(
+                                  isLightMode: state.isLightMode),
+                              fontFamily: FontFamily.dos,
+                            ),
                           ),
                         ),
                       ),
