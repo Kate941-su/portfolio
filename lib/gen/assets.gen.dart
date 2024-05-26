@@ -38,6 +38,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/green.png
   AssetGenImage get green => const AssetGenImage('assets/images/green.png');
 
+  /// File path: assets/images/image-world-info.png
+  AssetGenImage get imageWorldInfo =>
+      const AssetGenImage('assets/images/image-world-info.png');
+
   /// File path: assets/images/live_app.jpg
   AssetGenImage get liveApp =>
       const AssetGenImage('assets/images/live_app.jpg');
@@ -70,6 +74,7 @@ class $AssetsImagesGen {
         dental,
         facePhoto,
         green,
+        imageWorldInfo,
         liveApp,
         paint,
         portfolio,
